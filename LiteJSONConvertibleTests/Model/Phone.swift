@@ -26,8 +26,8 @@ extension Phone: JSONDecodable {
     
     static func decode(json: JSON) -> Phone? {
         return Phone(
-            label: json["label"] >>> JSONParse,
-            number: json["number"] >>> JSONParse)
+            label: json <| "label",
+            number: json <| "number")
     }
     
 }

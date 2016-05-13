@@ -18,12 +18,9 @@ class LocationsTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let locationsJson = json["locations"] >>> JSONArray
-            let locations = locationsJson.map({
-                return Location.decode($0)
-            })
+            let locations = json <|| "locations" >>> Location.decode
             XCTAssertEqual(locations!.count, 2)
-            Utils.compareLocation(locations, json: json["locations"] >>> JSONArray)
+            Utils.compareLocation(locations, json: json <|| "locations")
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }

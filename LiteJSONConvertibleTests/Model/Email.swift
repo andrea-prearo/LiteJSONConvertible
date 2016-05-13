@@ -26,8 +26,8 @@ extension Email: JSONDecodable {
     
     static func decode(json: JSON) -> Email? {
         return Email(
-            label: json["label"] >>> JSONParse,
-            address: json["address"] >>> JSONParse)
+            label: json <| "label",
+            address: json <| "address")
     }
     
 }

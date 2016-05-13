@@ -26,8 +26,8 @@ extension Location: JSONDecodable {
     
     static func decode(json: JSON) -> Location? {
         return Location(
-            label: json["label"] >>> JSONParse,
-            data: json["data"] >>> LocationData.decode)
+            label: json <| "label",
+            data: json <| "data" >>> LocationData.decode)
     }
     
 }

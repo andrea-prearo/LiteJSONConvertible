@@ -41,13 +41,13 @@ extension Contact: JSONDecodable {
     
     static func decode(json: JSON) -> Contact? {
         return Contact(
-            avatar: json["avatar"] >>> JSONParse,
-            firstName: json["firstName"] >>> JSONParse,
-            lastName: json["lastName"] >>> JSONParse,
-            company: json["company"] >>> JSONParse,
-            phone: json["phone"] >>> JSONArray >>> Phone.decode,
-            email: json["email"] >>> JSONArray >>> Email.decode,
-            location: json["location"] >>> JSONArray >>> Location.decode)
+            avatar: json <| "avatar",
+            firstName: json <| "firstName",
+            lastName: json <| "lastName",
+            company: json <| "company",
+            phone: json <|| "phone" >>> Phone.decode,
+            email: json <|| "email" >>> Email.decode,
+            location: json <|| "location" >>> Location.decode)
     }
     
 }

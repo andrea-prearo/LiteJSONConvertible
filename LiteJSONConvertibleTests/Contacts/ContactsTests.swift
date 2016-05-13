@@ -24,28 +24,28 @@ class ContactsTests: XCTestCase {
                 let json = json[i]
                 if let contact = contacts[i] {
                     if let avatar = contact.avatar {
-                        XCTAssertEqual(avatar, json["avatar"])
+                        XCTAssertEqual(avatar, json <| "avatar")
                     } else {
-                        XCTAssertNil(json["avatar"])
+                        XCTAssertNil(json <| "avatar")
                     }
                     if let firstName = contact.firstName {
-                        XCTAssertEqual(firstName, json["firstName"])
+                        XCTAssertEqual(firstName, json <| "firstName")
                     } else {
-                        XCTAssertNil(json["firstName"])
+                        XCTAssertNil(json <| "firstName")
                     }
                     if let lastName = contact.lastName {
-                        XCTAssertEqual(lastName, json["lastName"])
+                        XCTAssertEqual(lastName, json <| "lastName")
                     } else {
-                        XCTAssertNil(json["lastName"])
+                        XCTAssertNil(json <| "lastName")
                     }
                     if let company = contact.company {
-                        XCTAssertEqual(company, json["company"])
+                        XCTAssertEqual(company, json <| "company")
                     } else {
-                        XCTAssertNil(json["company"])
+                        XCTAssertNil(json <| "company")
                     }
-                    Utils.compareLocation(contact.location, json: json["location"] >>> JSONArray)
-                    Utils.comparePhone(contact.phone, json: json["phone"] >>> JSONArray)
-                    Utils.compareEmail(contact.email, json: json["email"] >>> JSONArray)
+                    Utils.compareLocation(contact.location, json: json <|| "location")
+                    Utils.comparePhone(contact.phone, json: json <|| "phone")
+                    Utils.compareEmail(contact.email, json: json <|| "email")
                 } else {
                     XCTFail("Parsing failed")
                 }

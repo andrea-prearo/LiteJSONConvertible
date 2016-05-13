@@ -35,11 +35,11 @@ extension LocationData: JSONDecodable {
     
     static func decode(json: JSON) -> LocationData? {
         return LocationData(
-            address: json["address"] >>> JSONParse,
-            city: json["city"] >>> JSONParse,
-            state: json["state"] >>> JSONParse,
-            country: json["country"] >>> JSONParse,
-            zipCode: json["zipCode"] >>> JSONParse)
+            address: json <| "address",
+            city: json <| "city",
+            state: json <| "state",
+            country: json <| "country",
+            zipCode: json <| "zipCode")
     }
     
 }

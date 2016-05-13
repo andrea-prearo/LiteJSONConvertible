@@ -13,7 +13,3 @@ public typealias JSON = AnyObject
 public func JSONParse<T>(object: JSON?) -> T? {
     return object as? T
 }
-
-public func JSONArray(object: JSON?) -> [JSON]? {
-    return object as? [JSON]
-}

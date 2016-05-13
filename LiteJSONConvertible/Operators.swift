@@ -20,3 +20,17 @@ public func >>><T,U>(t: T?, f: T -> U?) -> U? {
         return .None
     }
 }
+
+// Decoding Operators
+// https://robots.thoughtbot.com/real-world-json-parsing-with-swift
+
+infix operator <|  { associativity left precedence 150 }
+infix operator <||  { associativity left precedence 150 }
+
+public func <|<T>(json: JSON, key: String) -> T? {
+    return json[key] >>> JSONParse
+}
+
+public func <||<T>(json: JSON, key: String) -> [T]? {
+    return json <| key
+}
