@@ -14,16 +14,16 @@ class LocationsTests: XCTestCase {
 
     func testParsing() {
         do {
-            guard let json = try Utils.loadJsonFrom("Locations") as? JSON else {
+            guard let json = try Utils.loadJsonFrom("Locations") else {
                 XCTFail("JSON loading failed")
                 return
             }
-            let locationsJson = json["locations"] as? [JSON]
+            let locationsJson = json["locations"] >>> JSONArray
             let locations = locationsJson.map({
                 return Location.decode($0)
             })
             XCTAssertEqual(locations!.count, 2)
-            Utils.compareLocation(locations, json: json["locations"] as? [JSON])
+            Utils.compareLocation(locations, json: json["locations"] >>> JSONArray)
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }

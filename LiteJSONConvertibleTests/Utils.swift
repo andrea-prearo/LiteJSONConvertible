@@ -33,12 +33,12 @@ class Utils {
                     let json = json[i]
                     if let phone = phones[i] {
                         if let label = phone.label {
-                            XCTAssertEqual(label, json["label"] as? String)
+                            XCTAssertEqual(label, json["label"])
                         } else {
                             XCTAssertNil(json["label"])
                         }
                         if let number = phone.number {
-                            XCTAssertEqual(number, json["number"] as? String)
+                            XCTAssertEqual(number, json["number"])
                         } else {
                             XCTAssertNil(json["number"])
                         }
@@ -58,12 +58,12 @@ class Utils {
                     let json = json[i]
                     if let email = emails[i] {
                         if let label = email.label {
-                            XCTAssertEqual(label, json["label"] as? String)
+                            XCTAssertEqual(label, json["label"])
                         } else {
                             XCTAssertNil(json["label"])
                         }
                         if let address = email.address {
-                            XCTAssertEqual(address, json["address"] as? String)
+                            XCTAssertEqual(address, json["address"])
                         } else {
                             XCTAssertNil(json["address"])
                         }
@@ -83,11 +83,11 @@ class Utils {
                     let json = json[i]
                     if let location = locations[i] {
                         if let label = location.label {
-                            XCTAssertEqual(label, json["label"] as? String)
+                            XCTAssertEqual(label, json["label"])
                         } else {
                             XCTAssertNil(json["label"])
                         }
-                        compareLocationData(location.data!, json: json["data"] as? JSON)
+                        compareLocationData(location.data!, json: json["data"])
                     } else {
                         XCTFail("Location comparison failed")
                     }
@@ -101,22 +101,22 @@ class Utils {
         if let locationData = locationData,
             json = json {
                 if let address = locationData.address {
-                    XCTAssertEqual(address, json["address"] as? String)
+                    XCTAssertEqual(address, json["address"])
                 } else {
                     XCTAssertNil(json["address"])
                 }
                 if let city = locationData.city {
-                    XCTAssertEqual(city, json["city"] as? String)
+                    XCTAssertEqual(city, json["city"])
                 } else {
                     XCTAssertNil(json["city"])
                 }
                 if let state = locationData.state {
-                    XCTAssertEqual(state, json["state"] as? String)
+                    XCTAssertEqual(state, json["state"])
                 } else {
                     XCTAssertNil(json["state"])
                 }
                 if let country = locationData.country {
-                    XCTAssertEqual(country, json["country"] as? String)
+                    XCTAssertEqual(country, json["country"])
                 } else {
                     XCTAssertNil(json["country"])
                 }

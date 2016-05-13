@@ -25,10 +25,9 @@ struct Phone {
 extension Phone: JSONDecodable {
     
     static func decode(json: JSON) -> Phone? {
-        let label = parseString(json, key: "label")
-        let number = parseString(json, key: "number")
-        return Phone(label: label,
-            number: number)
+        return Phone(
+            label: json["label"] >>> JSONParse,
+            number: json["number"] >>> JSONParse)
     }
     
 }

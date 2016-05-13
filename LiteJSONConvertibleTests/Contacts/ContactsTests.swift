@@ -18,36 +18,34 @@ class ContactsTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let contacts = json.map({
-                return Contact.decode($0)
-            })
+            let contacts = json.map(Contact.decode)
             XCTAssertEqual(contacts.count, json.count)
             for (var i=0; i < contacts.count; i++) {
                 let json = json[i]
                 if let contact = contacts[i] {
                     if let avatar = contact.avatar {
-                        XCTAssertEqual(avatar, json["avatar"] as? String)
+                        XCTAssertEqual(avatar, json["avatar"])
                     } else {
                         XCTAssertNil(json["avatar"])
                     }
                     if let firstName = contact.firstName {
-                        XCTAssertEqual(firstName, json["firstName"] as? String)
+                        XCTAssertEqual(firstName, json["firstName"])
                     } else {
                         XCTAssertNil(json["firstName"])
                     }
                     if let lastName = contact.lastName {
-                        XCTAssertEqual(lastName, json["lastName"] as? String)
+                        XCTAssertEqual(lastName, json["lastName"])
                     } else {
                         XCTAssertNil(json["lastName"])
                     }
                     if let company = contact.company {
-                        XCTAssertEqual(company, json["company"] as? String)
+                        XCTAssertEqual(company, json["company"])
                     } else {
                         XCTAssertNil(json["company"])
                     }
-                    Utils.compareLocation(contact.location, json: json["location"] as? [JSON])
-                    Utils.comparePhone(contact.phone, json: json["phone"] as? [JSON])
-                    Utils.compareEmail(contact.email, json: json["email"] as? [JSON])
+                    Utils.compareLocation(contact.location, json: json["location"] >>> JSONArray)
+                    Utils.comparePhone(contact.phone, json: json["phone"] >>> JSONArray)
+                    Utils.compareEmail(contact.email, json: json["email"] >>> JSONArray)
                 } else {
                     XCTFail("Parsing failed")
                 }

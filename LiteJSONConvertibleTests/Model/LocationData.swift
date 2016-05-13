@@ -34,16 +34,12 @@ struct LocationData {
 extension LocationData: JSONDecodable {
     
     static func decode(json: JSON) -> LocationData? {
-        let address = parseString(json, key: "address")
-        let city = parseString(json, key: "city")
-        let state = parseString(json, key: "state")
-        let country = parseString(json, key: "country")
-        let zipCode = parseString(json, key: "zipCode")
-        return LocationData(address: address,
-            city: city,
-            state: state,
-            country: country,
-            zipCode: zipCode)
+        return LocationData(
+            address: json["address"] >>> JSONParse,
+            city: json["city"] >>> JSONParse,
+            state: json["state"] >>> JSONParse,
+            country: json["country"] >>> JSONParse,
+            zipCode: json["zipCode"] >>> JSONParse)
     }
     
 }

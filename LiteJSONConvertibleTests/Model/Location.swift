@@ -25,10 +25,9 @@ struct Location {
 extension Location: JSONDecodable {
     
     static func decode(json: JSON) -> Location? {
-        let label = parseString(json, key: "label")
-        let data = LocationData.decode(json["data"] as? JSON)
-        return Location(label: label,
-            data: data)
+        return Location(
+            label: json["label"] >>> JSONParse,
+            data: json["data"] >>> LocationData.decode)
     }
     
 }

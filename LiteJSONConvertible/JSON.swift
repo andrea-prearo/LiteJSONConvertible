@@ -8,28 +8,12 @@
 
 import Foundation
 
-public typealias JSON = [String: AnyObject]
+public typealias JSON = AnyObject
 
-public func parseString(input: JSON, key: String) -> String? {
-    return input[key] >>>= { $0 as? String }
+public func JSONParse<T>(object: JSON?) -> T? {
+    return object as? T
 }
 
-func parseNumber(input: JSON, key: String) -> NSNumber? {
-    return input[key] >>>= { $0 as? NSNumber }
-}
-
-public func parseBool(input: JSON, key: String) -> Bool? {
-    return parseNumber(input, key: key).map { $0.boolValue }
-}
-
-public func parseInt(input: JSON, key: String) -> Int? {
-    return parseNumber(input, key: key).map { $0.integerValue }
-}
-
-public func parseFloat(input: JSON, key: String) -> Float? {
-    return parseNumber(input, key: key).map { $0.floatValue }
-}
-
-public func parseDouble(input: JSON, key: String) -> Double? {
-    return parseNumber(input, key: key).map { $0.doubleValue }
+public func JSONArray(object: JSON?) -> [JSON]? {
+    return object as? [JSON]
 }

@@ -25,10 +25,9 @@ struct Email {
 extension Email: JSONDecodable {
     
     static func decode(json: JSON) -> Email? {
-        let label = parseString(json, key: "label")
-        let address = parseString(json, key: "address")
-        return Email(label: label,
-            address: address)
+        return Email(
+            label: json["label"] >>> JSONParse,
+            address: json["address"] >>> JSONParse)
     }
     
 }

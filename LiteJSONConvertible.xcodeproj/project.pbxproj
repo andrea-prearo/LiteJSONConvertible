@@ -21,6 +21,13 @@
 		AF98CD471CD808F0001A7357 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98CD421CD808F0001A7357 /* Location.swift */; };
 		AF98CD481CD808F0001A7357 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98CD431CD808F0001A7357 /* LocationData.swift */; };
 		AF98CD491CD808F0001A7357 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98CD441CD808F0001A7357 /* Phone.swift */; };
+		AFC7FE4B1CE582D7004F96AD /* ArrayOfBooleans.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC7FE451CE582D7004F96AD /* ArrayOfBooleans.json */; };
+		AFC7FE4C1CE582D7004F96AD /* ArrayOfDoubles.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC7FE461CE582D7004F96AD /* ArrayOfDoubles.json */; };
+		AFC7FE4D1CE582D7004F96AD /* ArrayOfFloats.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC7FE471CE582D7004F96AD /* ArrayOfFloats.json */; };
+		AFC7FE4E1CE582D7004F96AD /* ArrayOfIntegers.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC7FE481CE582D7004F96AD /* ArrayOfIntegers.json */; };
+		AFC7FE4F1CE582D7004F96AD /* ArrayOfStrings.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC7FE491CE582D7004F96AD /* ArrayOfStrings.json */; };
+		AFC7FE501CE582D7004F96AD /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7FE4A1CE582D7004F96AD /* BasicTests.swift */; };
+		AFC7FE521CE582F4004F96AD /* JSONDecodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7FE511CE582F4004F96AD /* JSONDecodable+Extensions.swift */; };
 		AFDDE5E71CC3379B007EAFDA /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDDE5E61CC3379B007EAFDA /* JSON.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +59,13 @@
 		AF98CD421CD808F0001A7357 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
 		AF98CD431CD808F0001A7357 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationData.swift; path = Model/LocationData.swift; sourceTree = "<group>"; };
 		AF98CD441CD808F0001A7357 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Phone.swift; path = Model/Phone.swift; sourceTree = "<group>"; };
+		AFC7FE451CE582D7004F96AD /* ArrayOfBooleans.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArrayOfBooleans.json; path = Basic/ArrayOfBooleans.json; sourceTree = "<group>"; };
+		AFC7FE461CE582D7004F96AD /* ArrayOfDoubles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArrayOfDoubles.json; path = Basic/ArrayOfDoubles.json; sourceTree = "<group>"; };
+		AFC7FE471CE582D7004F96AD /* ArrayOfFloats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArrayOfFloats.json; path = Basic/ArrayOfFloats.json; sourceTree = "<group>"; };
+		AFC7FE481CE582D7004F96AD /* ArrayOfIntegers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArrayOfIntegers.json; path = Basic/ArrayOfIntegers.json; sourceTree = "<group>"; };
+		AFC7FE491CE582D7004F96AD /* ArrayOfStrings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArrayOfStrings.json; path = Basic/ArrayOfStrings.json; sourceTree = "<group>"; };
+		AFC7FE4A1CE582D7004F96AD /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicTests.swift; path = Basic/BasicTests.swift; sourceTree = "<group>"; };
+		AFC7FE511CE582F4004F96AD /* JSONDecodable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecodable+Extensions.swift"; sourceTree = "<group>"; };
 		AFDDE5E61CC3379B007EAFDA /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +111,7 @@
 			children = (
 				AF1439BA1CB4895A0000DAAF /* LiteJSONConvertible.h */,
 				AF1439D11CB489880000DAAF /* JSONDecodable.swift */,
+				AFC7FE511CE582F4004F96AD /* JSONDecodable+Extensions.swift */,
 				AFDDE5E61CC3379B007EAFDA /* JSON.swift */,
 				AF5668A81CBA019200C87472 /* Operators.swift */,
 				AF1439BC1CB4895A0000DAAF /* Info.plist */,
@@ -107,6 +122,7 @@
 		AF1439C51CB4895A0000DAAF /* LiteJSONConvertibleTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFC7FE441CE582C3004F96AD /* Basic */,
 				AF98CD291CD80889001A7357 /* Model */,
 				AF98CD2A1CD80895001A7357 /* Locations */,
 				AF98CD2B1CD8089B001A7357 /* Contacts */,
@@ -144,6 +160,19 @@
 				AF98CD3D1CD808BF001A7357 /* ContactsTests.swift */,
 			);
 			name = Contacts;
+			sourceTree = "<group>";
+		};
+		AFC7FE441CE582C3004F96AD /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				AFC7FE451CE582D7004F96AD /* ArrayOfBooleans.json */,
+				AFC7FE461CE582D7004F96AD /* ArrayOfDoubles.json */,
+				AFC7FE471CE582D7004F96AD /* ArrayOfFloats.json */,
+				AFC7FE481CE582D7004F96AD /* ArrayOfIntegers.json */,
+				AFC7FE491CE582D7004F96AD /* ArrayOfStrings.json */,
+				AFC7FE4A1CE582D7004F96AD /* BasicTests.swift */,
+			);
+			name = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF98CD3A1CD808B9001A7357 /* Locations.json in Resources */,
+				AFC7FE4E1CE582D7004F96AD /* ArrayOfIntegers.json in Resources */,
+				AFC7FE4C1CE582D7004F96AD /* ArrayOfDoubles.json in Resources */,
+				AFC7FE4D1CE582D7004F96AD /* ArrayOfFloats.json in Resources */,
+				AFC7FE4B1CE582D7004F96AD /* ArrayOfBooleans.json in Resources */,
+				AFC7FE4F1CE582D7004F96AD /* ArrayOfStrings.json in Resources */,
 				AF98CD3E1CD808BF001A7357 /* Contacts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1439D21CB489880000DAAF /* JSONDecodable.swift in Sources */,
+				AFC7FE521CE582F4004F96AD /* JSONDecodable+Extensions.swift in Sources */,
 				AF5668A91CBA019200C87472 /* Operators.swift in Sources */,
 				AFDDE5E71CC3379B007EAFDA /* JSON.swift in Sources */,
 			);
@@ -273,6 +308,7 @@
 				AF98CD3B1CD808B9001A7357 /* LocationsTests.swift in Sources */,
 				AF1439DA1CB48C160000DAAF /* Utils.swift in Sources */,
 				AF98CD471CD808F0001A7357 /* Location.swift in Sources */,
+				AFC7FE501CE582D7004F96AD /* BasicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

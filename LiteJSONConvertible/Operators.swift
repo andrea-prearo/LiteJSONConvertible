@@ -9,15 +9,14 @@
 import Foundation
 
 // Functional operators code from:
-// http://chris.eidhof.nl/posts/json-parsing-in-swift.html
+// https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics
 
-infix operator >>>= {}
+infix operator >>> { associativity left precedence 150 } // Swift version of bind (>>=)
 
-public func >>>= <T,U>(optional : T?, f : T -> U?) -> U? {
-    return flatten(optional.map(f))
-}
-
-public func flatten<T>(x: T??) -> T? {
-    if let y = x { return y }
-    return nil
+public func >>><T,U>(t: T?, f: T -> U?) -> U? {
+    if let x = t {
+        return f(x)
+    } else {
+        return .None
+    }
 }

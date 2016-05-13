@@ -40,20 +40,14 @@ struct Contact {
 extension Contact: JSONDecodable {
     
     static func decode(json: JSON) -> Contact? {
-        let avatar = parseString(json, key: "avatar")
-        let firstName = parseString(json, key: "firstName")
-        let lastName = parseString(json, key: "lastName")
-        let company = parseString(json, key: "company")
-        let phone = Phone.decode(json["phone"] as? [JSON])
-        let email = Email.decode(json["email"] as? [JSON])
-        let location = Location.decode(json["location"] as? [JSON])
-        return Contact(avatar: avatar,
-            firstName: firstName,
-            lastName: lastName,
-            company: company,
-            phone: phone,
-            email: email,
-            location: location)
+        return Contact(
+            avatar: json["avatar"] >>> JSONParse,
+            firstName: json["firstName"] >>> JSONParse,
+            lastName: json["lastName"] >>> JSONParse,
+            company: json["company"] >>> JSONParse,
+            phone: json["phone"] >>> JSONArray >>> Phone.decode,
+            email: json["email"] >>> JSONArray >>> Email.decode,
+            location: json["location"] >>> JSONArray >>> Location.decode)
     }
     
 }
