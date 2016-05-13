@@ -1,0 +1,22 @@
+{
+    "locations": [{
+         "label": "Home",
+         "data": {
+             "address": "6925 Felicity Coves",
+             "city": "East Davin",
+             "state": "Washington",
+             "country": "USA",
+             "zipCode": "22998-1456"
+         }
+    },
+    {
+        "label": "Work",
+        "data": {
+            "address": "0506 Gretchen River",
+            "city": "Huntington Beach",
+            "state": "Connecticut",
+            "country": "USA",
+            "zipCode": "61182-9561"
+        }
+    }]
+}
