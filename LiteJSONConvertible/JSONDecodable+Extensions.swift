@@ -2,8 +2,8 @@
 //  Extensions.swift
 //  LiteJSONConvertible
 //
-//  Created by Prearo, Andrea on 5/1/16.
-//
+//  Created by Andrea Prearo on 5/1/16.
+//  Copyright © 2016 Andrea Prearo
 //
 
 import Foundation

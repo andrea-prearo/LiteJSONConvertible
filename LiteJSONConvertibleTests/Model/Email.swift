@@ -2,8 +2,8 @@
 //  Email.swift
 //  LiteJSONConvertible
 //
-//  Created by Prearo, Andrea on 4/5/16.
-//
+//  Created by Andrea Prearo on 4/5/16.
+//  Copyright © 2016 Andrea Prearo
 //
 
 import Foundation
