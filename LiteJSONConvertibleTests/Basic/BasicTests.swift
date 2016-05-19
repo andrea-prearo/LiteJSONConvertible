@@ -18,9 +18,7 @@ class BasicTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let items = json.map({
-                return $0 >>> String.decode
-            })
+            let items = json.map(String.decode)
             XCTAssertEqual(items.count, json.count)
             for (var i=0; i < items.count; i++) {
                 let json = json[i]
@@ -41,9 +39,7 @@ class BasicTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let items = json.map({
-                return $0 >>> Bool.decode
-            })
+            let items = json.map(Bool.decode)
             XCTAssertEqual(items.count, json.count)
             for (var i=0; i < items.count; i++) {
                 let json = json[i]
@@ -64,9 +60,7 @@ class BasicTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let items = json.map({
-                return $0 >>> Int.decode
-            })
+            let items = json.map(Int.decode)
             XCTAssertEqual(items.count, json.count)
             for (var i=0; i < items.count; i++) {
                 let json = json[i]
@@ -87,9 +81,7 @@ class BasicTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let items = json.map({
-                return $0 >>> Float.decode
-            })
+            let items = json.map(Float.decode)
             XCTAssertEqual(items.count, json.count)
             for (var i=0; i < items.count; i++) {
                 let json = json[i]
@@ -110,9 +102,7 @@ class BasicTests: XCTestCase {
                 XCTFail("JSON loading failed")
                 return
             }
-            let items = json.map({
-                return $0 >>> Double.decode
-            })
+            let items = json.map(Double.decode)
             XCTAssertEqual(items.count, json.count)
             for (var i=0; i < items.count; i++) {
                 let json = json[i]
