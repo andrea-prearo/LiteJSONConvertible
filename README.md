@@ -7,6 +7,7 @@ A minimalistic approach to JSON parsing
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Notes](#notes)
+5. [Medium write-up](#medium-write-up)
 
 ## Features
 - Gereric protocol with associated type
@@ -201,3 +202,7 @@ This library is just an experiment on minimalistic JSON parsing using generic pr
 - [Parsing JSON in Swift](http://chris.eidhof.nl/posts/json-parsing-in-swift.html)
 - [Efficient JSON in Swift with Functional Concepts and Generics](https://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)
 - [Real World JSON Parsing with Swift](https://robots.thoughtbot.com/real-world-json-parsing-with-swift)
+
+## Medium write-up
+- [JSON parsing in Swift — Part I: a generic protocol for JSON parsing](https://medium.com/@andrea.prearo/json-parsing-in-swift-part-i-a-generic-protocol-for-json-parsing-dc6bf4116a13#.rmv0kpf9f)
+- [JSON parsing in Swift — Part II: a functional approach to JSON parsing](https://medium.com/@andrea.prearo/json-parsing-in-swift-part-ii-a-functional-approach-to-json-parsing-378f45c61f1f#.19anwrgym)
